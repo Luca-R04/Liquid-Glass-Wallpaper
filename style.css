@@ -1,0 +1,228 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Now-playing card */
+#card {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(calc(58vh * var(--k, 1)), 84vw);
+  height: calc(26vh * var(--k, 1));
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: calc(2.4vh * var(--k, 1));
+  padding: calc(2.2vh * var(--k, 1));
+  border-radius: calc(2.4vh * var(--k, 1));
+  background: rgba(3, 6, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  -webkit-backdrop-filter: blur(1.4vh);
+  backdrop-filter: blur(1.4vh);
+  font-family:
+    "Segoe UI Variable Display",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #fff;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  transition:
+    width 2s cubic-bezier(0.65, 0, 0.35, 1),
+    height 2s cubic-bezier(0.65, 0, 0.35, 1),
+    padding 2s cubic-bezier(0.65, 0, 0.35, 1),
+    gap 2s cubic-bezier(0.65, 0, 0.35, 1),
+    border-radius 2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#art {
+  flex: none;
+  width: calc(21.6vh * var(--k, 1));
+  height: calc(21.6vh * var(--k, 1));
+  border-radius: calc(1.6vh * var(--k, 1));
+  background: linear-gradient(135deg, #1c3fd9, #7a3cf0 60%, #18c2d6) center /
+    cover;
+  box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.55);
+  transition:
+    opacity 2s ease,
+    transform 2s cubic-bezier(0.65, 0, 0.35, 1),
+    filter 0.4s ease;
+  transform-origin: center;
+}
+
+#card.paused #art {
+  opacity: 0.6;
+  filter: saturate(0.6);
+}
+
+#meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(0.7vh * var(--k, 1));
+}
+
+/* Digital clock */
+#clock {
+  font-size: calc(var(--clock-size, 4.2) * 1vh * var(--k, 1));
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.045em;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.96);
+  white-space: nowrap;
+  flex: none;
+  align-self: flex-start;
+  width: max-content;
+  transition:
+    font-size 2s cubic-bezier(0.65, 0, 0.35, 1),
+    translate 2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#separator {
+  width: 100%;
+  height: 1px;
+  flex: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.08)
+  );
+  margin: calc(0.5vh * var(--k, 1)) 0;
+}
+
+#title {
+  font-size: calc(3.3vh * var(--text-size, 1) * var(--k, 1));
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#artist {
+  font-size: calc(2.3vh * var(--text-size, 1) * var(--k, 1));
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#album {
+  font-size: calc(1.7vh * var(--text-size, 1) * var(--k, 1));
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#bar {
+  height: calc(0.55vh * var(--k, 1));
+  min-height: 3px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+  margin-top: calc(1.4vh * var(--k, 1));
+}
+
+#fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: #fff;
+  will-change: transform;
+}
+
+#times {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(1.5vh * var(--k, 1));
+  color: rgba(255, 255, 255, 0.5);
+  font-variant-numeric: tabular-nums;
+}
+
+.swap {
+  animation: swapIn 0.6s ease;
+}
+
+@keyframes swapIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.8vh);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Normal media layout */
+#media-content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.7vh * var(--k, 1));
+  min-width: 0;
+  width: 100%;
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 2s ease,
+    transform 2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Compact clock-only card */
+#card.clock-only {
+  width: calc((var(--clock-size, 6) * 2.2vh + 6vh) * var(--k, 1));
+  height: calc((var(--clock-size, 6) * 1.1vh + 4vh) * var(--k, 1));
+  min-width: 0;
+  gap: 0;
+  padding: calc(2vh * var(--k, 1));
+  justify-content: center;
+  align-items: center;
+}
+
+#card.clock-only #art {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+}
+
+#card.clock-only #meta::before {
+  content: "";
+  flex: none;
+  height: calc(var(--clock-size, 4.2) * 1.1vh * var(--k, 1));
+}
+
+/* Center the clock on the compact card rather than in the metadata column. */
+#card.clock-only #clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  text-align: center;
+  translate: -50% -50%;
+  z-index: 2;
+  font-size: calc(var(--clock-size, 6) * 1vh * var(--k, 1));
+}
+
+#card.clock-only #media-content {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+}

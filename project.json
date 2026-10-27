@@ -1,0 +1,200 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Smooth colorful waves. Includes a clock and media player info card.\r\n\r\nTags: Abstract, Animated wallpaper, Digital clock, Music visualization, Now playing, Customizable, Media Integration.",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"bands" : 
+			{
+				"index" : 2,
+				"max" : 2,
+				"min" : 0.4,
+				"order" : 102,
+				"step" : 0.05,
+				"text" : "Ribbon count",
+				"type" : "slider",
+				"value" : 0.5
+			},
+			"cardsize" : 
+			{
+				"index" : 11,
+				"max" : 1.6,
+				"min" : 0.3,
+				"order" : 111,
+				"step" : 0.05,
+				"text" : "Now-playing card size",
+				"type" : "slider",
+				"value" : 0.8
+			},
+			"clocksize" : 
+			{
+				"index" : 17,
+				"max" : 18,
+				"min" : 0.5,
+				"order" : 117,
+				"step" : 0.5,
+				"text" : "Clock font size",
+				"type" : "slider",
+				"value" : 5
+			},
+			"colorshift" : 
+			{
+				"index" : 12,
+				"order" : 112,
+				"text" : "Shifting color gradient",
+				"type" : "bool",
+				"value" : true
+			},
+			"colorspeed" : 
+			{
+				"index" : 13,
+				"max" : 1,
+				"min" : 0.01,
+				"order" : 113,
+				"step" : 0.01,
+				"text" : "Color shift speed",
+				"type" : "slider",
+				"value" : 0.05
+			},
+			"dark" : 
+			{
+				"index" : 16,
+				"max" : 2,
+				"min" : 0,
+				"order" : 116,
+				"step" : 0.05,
+				"text" : "Crease depth",
+				"type" : "slider",
+				"value" : 1.5
+			},
+			"fog" : 
+			{
+				"index" : 7,
+				"max" : 1.5,
+				"min" : 0,
+				"order" : 107,
+				"step" : 0.05,
+				"text" : "Distance haze",
+				"type" : "slider",
+				"value" : 0.5
+			},
+			"fold" : 
+			{
+				"index" : 3,
+				"max" : 2,
+				"min" : 0,
+				"order" : 103,
+				"step" : 0.05,
+				"text" : "Folding",
+				"type" : "slider",
+				"value" : 1
+			},
+			"gap" : 
+			{
+				"index" : 4,
+				"max" : 1.2,
+				"min" : 0,
+				"order" : 104,
+				"step" : 0.05,
+				"text" : "Space between waves",
+				"type" : "slider",
+				"value" : 0.8
+			},
+			"glow" : 
+			{
+				"index" : 14,
+				"max" : 2,
+				"min" : 0,
+				"order" : 114,
+				"step" : 0.05,
+				"text" : "Glossiness",
+				"type" : "slider",
+				"value" : 1
+			},
+			"purple" : 
+			{
+				"index" : 15,
+				"max" : 1.5,
+				"min" : 0,
+				"order" : 115,
+				"step" : 0.05,
+				"text" : "Purple amount (if color shift is off)",
+				"type" : "slider",
+				"value" : 1
+			},
+			"quality" : 
+			{
+				"index" : 9,
+				"max" : 32,
+				"min" : 8,
+				"order" : 109,
+				"step" : 2,
+				"text" : "3D quality",
+				"type" : "slider",
+				"value" : 16
+			},
+			"scale" : 
+			{
+				"index" : 1,
+				"max" : 2,
+				"min" : 0.5,
+				"order" : 101,
+				"step" : 0.05,
+				"text" : "Zoom",
+				"type" : "slider",
+				"value" : 1
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"showmedia" : 
+			{
+				"index" : 10,
+				"order" : 110,
+				"text" : "Show now-playing card",
+				"type" : "bool",
+				"value" : true
+			},
+			"speed" : 
+			{
+				"index" : 0,
+				"max" : 2,
+				"min" : 0.01,
+				"order" : 100,
+				"step" : 0.05,
+				"text" : "Speed",
+				"type" : "slider",
+				"value" : 0.05
+			},
+			"textsize" : 
+			{
+				"index" : 18,
+				"max" : 2,
+				"min" : 0.5,
+				"order" : 118,
+				"step" : 0.05,
+				"text" : "Music information font size",
+				"type" : "slider",
+				"value" : 1
+			}
+		}
+	},
+	"preview" : "preview.gif",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : 0,
+	"snapshotoverlay" : "",
+	"tags" : [ "Abstract" ],
+	"title" : "Liquid Glass OLED",
+	"type" : "web",
+	"version" : 1,
+	"visibility" : "public",
+	"workshopid" : "3827311896",
+	"workshopurl" : "steam://url/CommunityFilePage/3827311896"
+}
