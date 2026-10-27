@@ -3,7 +3,9 @@ A wallpaper engine project which includes a moving abstract background and media
 
 Liquid Glass is a Wallpaper Engine web wallpaper featuring animated, glass-like ribbons, a digital clock, and a now-playing card.
 
-![Liquid Glass preview](demo.gif)
+### Click for a live preview
+[![Liquid Glass preview](demo.gif)](https://luca-r04.github.io/Liquid-Glass-Wallpaper/)
+#### Does not support media player in browser
 
 ## Features
 
