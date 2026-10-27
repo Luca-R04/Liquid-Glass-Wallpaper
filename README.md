@@ -19,7 +19,3 @@ Liquid Glass is a Wallpaper Engine web wallpaper featuring animated, glass-like 
 Open `index.html` in a browser that supports WebGL and can load the local shader files.
 
 To use the media player, the project must be opened in wallpaper engine.
-
-## Live Demo
-
-[Live preview without media player](https://luca-r04.github.io/Liquid-Glass-Wallpaper/)
